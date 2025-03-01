@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Selenium Test Suite">
-    <test name="Google Tests">
-        <classes>
-            <class name="com.example.GoogleSearchTest"/> <!-- Ensure this matches the package and class name -->
-        </classes>
-    </test>
-</suite>
