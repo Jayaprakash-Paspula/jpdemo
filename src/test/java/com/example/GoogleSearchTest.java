@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions; // Add this import
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -12,7 +13,11 @@ public class GoogleSearchTest {
     @BeforeMethod
     public void setUp() {
         WebDriverManager.chromedriver().setup(); // Automatically download and set up ChromeDriver
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless"); // Run in headless mode
+        options.addArguments("--disable-gpu"); // Disable GPU for headless mode
+        options.addArguments("--window-size=1920,1080"); // Set window size
+        driver = new ChromeDriver(options);
     }
 
     @Test
